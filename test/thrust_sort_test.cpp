@@ -7,7 +7,7 @@
 #include <iterator>
 
 // defines the function prototype
-#include <device.h>
+#include <thrust_sort.h>
 
 int main(void)
 {
@@ -17,7 +17,7 @@ int main(void)
     thrust::generate(h_vec.begin(), h_vec.end(), rng);
 
     // interface to CUDA code
-    sort_on_device(h_vec);
+    thrust_sort(h_vec);
     // print sorted array
     thrust::copy(h_vec.begin(), h_vec.end(), std::ostream_iterator<int>(std::cout, "\n"));
 

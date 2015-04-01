@@ -4,6 +4,22 @@ First, I read this [thrust example (cpp_integration)](https://github.com/thrust/
 
 Then, I want to make user-code (and test-code) same between CPU and GPU. Switch CPU/GPU by only changing LIBs. In this project, we prepare 1 definition header and 2 implementation (CPU/GPU). In addition, CMake generates 2 CTest (CPU/GPU) from 1 test-code.
 
+```
+.
+├── CMakeLists.txt
+├── cmk.sh
+├── header
+│   └── thrust_sort.h        # definition header
+├── README.md
+├── src
+│   ├── CMakeLists.txt
+│   ├── thrust_sort.cpp      # implementation on CPU
+│   └── thrust_sort.cu       # implementation on GPU
+└── test
+    ├── CMakeLists.txt
+    └── thrust_sort_test.cpp  # test on CPU/GPU
+```
+
 ``` sh
 $ ./cmk.sh test
 
