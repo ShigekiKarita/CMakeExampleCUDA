@@ -7,7 +7,7 @@ function(create_test path lib)
   target_link_libraries(${target} ${lib})
 
   add_test(NAME ${target} COMMAND $<TARGET_FILE:${target}>)
-  set_property(TEST ${target} APPEND PROPERTY LABELS ${path})
+  set_property(TEST ${target} APPEND PROPERTY LABELS "${path} (${lib})")
 endfunction()
 
 foreach(path IN LISTS test_sources)
