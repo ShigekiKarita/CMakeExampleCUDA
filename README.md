@@ -25,28 +25,21 @@ $ ./cmk.sh test
 
 ...
 
-[ 25%] Building NVCC (Device) object src/CMakeFiles/gpu.dir//./gpu_generated_device.cu.o
-Scanning dependencies of target cpu
-[ 50%] Building CXX object src/CMakeFiles/cpu.dir/device.cpp.o
-Linking CXX static library libcpu.a
-[ 50%] Built target cpu
-Scanning dependencies of target host_cpu
-[ 75%] Building CXX object test/CMakeFiles/host_cpu.dir/host.cpp.o
-Linking CXX executable host_cpu
-[ 75%] Built target host_cpu
-Scanning dependencies of target gpu
-Linking CXX static library libgpu.a
-[ 75%] Built target gpu
-Scanning dependencies of target host_gpu
-[100%] Building CXX object test/CMakeFiles/host_gpu.dir/host.cpp.o
-Linking CXX executable host_gpu
-[100%] Built target host_gpu
-Test project /home/karita/cpp_integration/build/g++/release
-    Start 1: host_cpu
-    Start 2: host_gpu
-1/2 Test #1: host_cpu .........................   Passed    0.00 sec
-2/2 Test #2: host_gpu .........................   Passed    0.12 sec
+[ 25%] Built target cpu
+[ 50%] Built target gpu
+[ 75%] Built target thrust_sort_test_cpu
+[100%] Built target thrust_sort_test_gpu
+Test project build/g++/release
+    Start 2: thrust_sort_test_gpu
+    Start 1: thrust_sort_test_cpu
+1/2 Test #1: thrust_sort_test_cpu .............   Passed    0.00 sec
+2/2 Test #2: thrust_sort_test_gpu .............   Passed    0.15 sec
 
 100% tests passed, 0 tests failed out of 2
-Total Test time (real) =   0.12 sec
+
+Label Time Summary:
+test/thrust_sort_test.cpp (cpu)    =   0.00 sec
+test/thrust_sort_test.cpp (gpu)    =   0.15 sec
+
+Total Test time (real) =   0.15 sec
 ```

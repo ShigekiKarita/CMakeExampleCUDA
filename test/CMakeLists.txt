@@ -7,7 +7,8 @@ function(create_test path lib)
   target_link_libraries(${target} ${lib})
 
   add_test(NAME ${target} COMMAND $<TARGET_FILE:${target}>)
-  set_property(TEST ${target} APPEND PROPERTY LABELS "${path} (${lib})")
+  file(RELATIVE_PATH rpath ${CMAKE_SOURCE_DIR} ${path})
+  set_property(TEST ${target} APPEND PROPERTY LABELS "${rpath} (${lib})")
 endfunction()
 
 foreach(path IN LISTS test_sources)
