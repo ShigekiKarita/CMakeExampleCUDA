@@ -8,6 +8,7 @@ enable_testing()
 
 set(cpulib "cpu")
 set(gpulib "gpu")
+
 include_directories(header)
 add_subdirectory(src)
 add_subdirectory(test)
